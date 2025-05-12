@@ -1,0 +1,46 @@
+<!-- 3. Crea una carpeta 'public' y dentro crea el archivo index.html -->
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Chat en Tiempo Real</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="container">
+    <div class="chat-container">
+      <div class="sidebar">
+        <h2>Usuarios en línea</h2>
+        <ul id="usuarios-lista"></ul>
+      </div>
+      <div class="chat">
+        <div class="chat-header">
+          <h1>Chat en Tiempo Real</h1>
+        </div>
+        <div id="mensajes" class="chat-messages"></div>
+        <div id="escribiendo" class="typing-indicator"></div>
+        <form id="formulario-mensaje" class="message-form">
+          <input type="text" id="mensaje-input" placeholder="Escribe un mensaje..." autocomplete="off">
+          <button type="submit">Enviar</button>
+        </form>
+      </div>
+    </div>
+  </div>
+  
+  <div id="modal-usuario" class="modal">
+    <div class="modal-content">
+      <h2>Bienvenido al Chat</h2>
+      <p>Por favor, ingresa tu nombre para comenzar:</p>
+      <form id="formulario-usuario">
+        <input type="text" id="nombre-usuario" placeholder="Tu nombre..." required>
+        <button type="submit">Entrar al Chat</button>
+      </form>
+    </div>
+  </div>
+  
+  <script src="/socket.io/socket.io.js"></script>
+  <script src="main.js"></script>
+</body>
+</html>
